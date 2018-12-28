@@ -1,0 +1,17 @@
+<h1>List of Articles:</h1>
+
+<% @articles.each do |article| %>
+
+<h2><%= article.title %></h2>
+<p><%= article.text %></p>
+<p><%= link_to 'Show', article_path(article) %>
+	<%= link_to 'Edit', edit_article_path(article) %>
+	<%= link_to 'Delete', article_path(article), method: :delete, data: { cofirm: 'Are you sure?' } %>
+</p>
+
+<% end %>
+
+<% @articles.each do |article| %>
+  comments in article <%= article.comments.count %>
+<% end %>
+<hr>
